@@ -1,13 +1,18 @@
 body {
+    width: 80%;
+    height: 100%;
+    background-image: url("../images/whitedice-blackleft.jpg");
+    background-size: 100%;
+
     
 }
 .grid {
-    margin: auto;
+    align-content: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     height: 100%;
-    width: 800%;
+    width: 100%;
     text-align: center;
 
 
@@ -17,17 +22,18 @@ body {
 .span-col-3 {
     grid-column: span 3 / auto;
     
-    max-height: auto;
+    
     }
-.jumbotron {
-    background-image: url("../images/1\ \(1\).jpg");
+/* .jumbotron {
+    max-width: 100%;
+    max-height: auto; */
 }
 
 .span-row-3 {
     grid-row: span 3 / auto;
 }
 .dice-canvas {
-    background-image: url("../images/");
+    background-image: url("../images/white-bckgrnd.jpg");
     height: 400px;
     width: 400px;
 }
