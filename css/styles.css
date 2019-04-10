@@ -7,7 +7,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     height: 100%;
-    width: 80%;
+    width: 800%;
     text-align: center;
 
 
@@ -28,9 +28,11 @@ body {
 }
 .dice-canvas {
     background-image: url("../images/");
+    height: 400px;
+    width: 400px;
 }
 .players{
     background-image: url("../images/dice_3d_flying.jpg");
-    height: 800px;
-    width: 400px;
+    height: 400px;
+    width: 200px;
 }
