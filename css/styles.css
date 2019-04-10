@@ -1,0 +1,13 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.span-col-3 {
+    grid-column: span 3 / auto;
+}
+
+.span-row-3 {
+    grid-row: span 3 / auto;
+}
