@@ -2,7 +2,7 @@ body {
     width: 80%;
     height: 100%;
     background-image: url("../images/whitedice-blackleft.jpg");
-    background-size: 100%;
+        background-size: 100%;
     align-content: center;
 
 
@@ -16,6 +16,8 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
+    border: solid 4px red;
+    border-radius: 10px;
 
 
 
