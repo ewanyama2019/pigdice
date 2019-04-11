@@ -1,7 +1,7 @@
 body {
     width: 80%;
     height: 100%;
-    background-image: url("../images/whitedice-blackleft.jpg");
+    background-image: url("../images/brightred-backgrnd.jpg");
     background-size: 100%;
     margin:auto;
 
@@ -74,3 +74,20 @@ h1.h1-footer{
     color: white;
 }
 
+.grid-social {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+.social {
+    display:flex;
+    float: right;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 50px;
+}
+.h5social{
+    color:white;
+    float:left;
+}
