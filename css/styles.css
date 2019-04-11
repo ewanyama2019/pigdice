@@ -85,11 +85,13 @@ h1.h1-footer{
     border: 2px solid white;
     border-radius: 15px;
     background: #ddd;
-    height: 50%;
+    height: 70%;
     margin:auto;
     opacity: 0.5;
 
 }
 button {
     width: 15%;
+    border-style: groove;
+    
 }
