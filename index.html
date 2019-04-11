@@ -13,9 +13,8 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/underscore.js"></script>
-    <script>
-        src = "js/scripts.js"
-    </script>
+    <script src = "js/scripts.js"></script>
+   
 </head>
 
 <body>
@@ -29,6 +28,7 @@
         <div>
             <div class="players" id="player1">
                 <h1>Player1</h1>
+
             </div>
         </div>
         <div class="span-row-3 dice-canvas">
@@ -54,6 +54,7 @@
             <div class="dice-results" id="dice-results-1">
                 <h3>Dice-roll 1:</h3>
                 <!-- <form class="form-control" action="" method="get"></form> -->
+                <h2 id ="player1_roll"></h2>
             </div>
         </div>
         <div>
@@ -64,7 +65,7 @@
         </div>
         <div class="span-col-3 game-controls">
             <button class="btn btn-danger">New Game</button>
-            <button class="btn btn-danger">Roll</button>
+            <button class="btn btn-danger" id="rollDice">Roll</button>
             <button class="btn btn-danger">Hold</button>
 
         </div>
