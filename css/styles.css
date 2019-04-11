@@ -1,7 +1,7 @@
 body {
     width: 80%;
     height: 100%;
-    background-image: url("../images/brightred-backgrnd.jpg");
+    background-image: url("../images/splash-white-dice.jpg");
     background-size: 100%;
     margin:auto;
 
@@ -55,7 +55,13 @@ body {
     display:flex;
     
 } */
-
+.form-control {
+    width: 75%;
+    text-align: center
+}
+.game-controls{
+    border-bottom: 4px solid salmon;
+}
 #logo {
     display:flex;
     float: right;
@@ -78,6 +84,7 @@ h1.h1-footer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+
 }
 .social {
     display:flex;
@@ -90,4 +97,5 @@ h1.h1-footer{
 .h5social{
     color:white;
     float:left;
+    
 }
