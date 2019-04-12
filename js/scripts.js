@@ -4,28 +4,33 @@ $(document).ready(function () {
     var cumulative_score_1 = 0;
     var player1Score;
 
-    $("button#rollDice").click(function () {
+    $("button#rollDice1").click(function () {
 
         var min = 1;
         var max = 7;
         var random = Math.floor(Math.random() * (+max - +min)) + +min;
 
-        $("h2#player1_roll").prepend(random + ", ");
-        scores_1.push(random);
+        if (random !== 1) {
+            $("h2#player1_roll").prepend(random + ", ");
+            scores_1.push(random);
 
-        var sum1 = _.reduce(scores_1, function (memo, num) {
-            return memo + num;
-        }, 0);
-        // alert(sum1);
+            var sum1 = _.reduce(scores_1, function (memo, num) {
+                return memo + num;
+            }, 0);
+            // alert(sum1);
 
-        $("button#hold").click(function () {
-            cumulative_score_1 = sum1;
+            $("button#hold1").click(function () {
+                cumulative_score_1 = sum1;
+                // alert(cumulative_score_1);
+                $("h2#player1_cum_score").text(cumulative_score_1);
+                if (cumulative_score_1 === 100) {
+                    alert("Player 1 Wins")
+                }
 
-            // alert(cumulative_score_1);
+            });
+        };
+        
 
-            $("h2#player1_cum_score").text(cumulative_score_1);
-
-        });
 
 
     });
