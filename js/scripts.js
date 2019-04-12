@@ -1,3 +1,42 @@
+
+////---------start of BUSINESS LOGIC--------------------////
+
+//  Constructor for Player
+function Player() {
+    this.cummScore = 0;
+    this.diceRoll = [];
+    this.turn =0;
+};
+
+//  Declared object player
+var player1 = new Player ();
+var player2 = new Player ();
+
+//Finction to generate random numbers
+function randomizer(){
+    var min = 1;
+    var max = 7;
+    var random = Math.floor(Math.random() * (+max - +min)) + +min;
+    alert(random);
+};
+
+
+//declare roll prototype
+Player.prototype.Roll =function(){
+    this.diceRoll.push(randomizer());
+};
+
+//declare hold prototype
+Player.prototype.Hold = function(){
+    this.cummScore += _.reduce(this.diceRoll, function (memo, num) {
+            return memo + num;
+        }, 0);
+};
+
+//------------------end of BUSINESS LOGIG------------------------//
+
+
+//------------------start of USER LOGIG--------------------------//
 $(document).ready(function () {
     // console.log("Page is Ready");
     var scores_1 = [];
@@ -29,38 +68,10 @@ $(document).ready(function () {
 
             });
         };
-        
+
 
 
 
     });
 
 });
-
-
-
-
-
-
-/*  Constructor for Player*/
-function player(name, score) {
-    this.cummScore = 0;
-    this.diceRoll = [];
-    this.turn = turn;
-};
-
-/*  Declared object player*/ 
-var player1 = new player ();
-var player2 = new player ()
-
-//Finction to generate random numbers
-function randomizer(){
-    var min = 1;
-    var max = 7;
-    var random = Math.floor(Math.random() * (+max - +min)) + +min;
-    alert(random);
-};
-
-
-//declare prototypes
-player.prototype.diceRoll
