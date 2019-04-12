@@ -53,3 +53,10 @@ function player(name, score) {
 var player1 = new player ();
 var player2 = new player ()
 
+
+function randomizer(){
+    var min = 1;
+    var max = 7;
+    var random = Math.floor(Math.random() * (+max - +min)) + +min;
+    alert(random);
+};
