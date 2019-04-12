@@ -25,7 +25,7 @@ body {
 .span-row-3 {
     grid-row: span 3 / auto;
 }
-#logo {
+#logo, #twodice {
     display: flex;
     float: right;
     border: 1px solid #ddd;
@@ -33,6 +33,7 @@ body {
     padding: 5px;
     width: 150px;
 }
+
 .dice-canvas {
     width: 100%;
     height: 400px;

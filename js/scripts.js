@@ -59,11 +59,8 @@ $(document).ready(function () {
             alert("You're out");
             player1.diceRoll = [];
             // $("h2#player1_roll").text(player1.diceRoll);
-        } 
-        else if ($("button#hold1").click(function () {}) && (_.contains(player1.diceRoll, 1))) {}
-                
-        else {
-                  
+        } else if ($("button#hold1").click(function () {}) && (_.contains(player1.diceRoll, 1))) {} else {
+
             $("h2#player1_roll").text(player1.diceRoll + ", ");
             $("button#hold1").click(function () {
                 player1.Hold();
@@ -74,14 +71,41 @@ $(document).ready(function () {
 
             });
         };
-        
+
 
 
 
 
     });
 
-    
+
+    $("button#rollDice2").click(function () {
+        player2.Roll();
+
+        if (_.contains(player2.diceRoll, 1)) {
+            alert("You're out");
+            player2.diceRoll = [];
+            // $("h2#player2_roll").text(player2.diceRoll);
+        } else if ($("button#hold2").click(function () {}) && (_.contains(player2.diceRoll, 1))) {} else {
+
+            $("h2#player2_roll").text(player2.diceRoll + ", ");
+            $("button#hold2").click(function () {
+                player2.Hold();
+                $("h2#player2_cum_score").text(player2.roundScore);
+                if (player2.cummScore === 100) {
+                    alert("Player 2 Wins")
+                }
+
+            });
+        };
+
+
+
+
+
+    });
+
+
 
 
 
