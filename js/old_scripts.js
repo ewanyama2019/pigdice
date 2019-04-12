@@ -18,7 +18,6 @@ function randomizer(){
     var max = 7;
     var random = Math.floor(Math.random() * (+max - +min)) + +min;
     alert(random);
-    return (random);
 };
 
 
@@ -41,27 +40,32 @@ Player.prototype.Hold = function(){
 
 
 //------------------start of USER LOGIG--------------------------//
-$(document).ready(function () {});
-    
-    //Initialize Final Score boards to Zero
-    function init (){
-        $("button#initialize").click(function () {
-            player1.cummScore == player2.cummScore == 0;
-            $("h2#player1_cum_score").text(player1.cummScore);
-            $("h2#player2_cum_score").text(player2.cummScore);
-        });
-
-    }
+$(document).ready(function () {
+    // console.log("Page is Ready");
+    var scores_1 = [];
+    var cumulative_score_1 = 0;
+    var player1Score;
 
     $("button#rollDice1").click(function () {
-        player1.Roll();
-        
-        if (player1.diceRoll !== 1) {
-            $("h2#player1_roll").text(player1.diceRoll + ", ");
+
+        var min = 1;
+        var max = 7;
+        var random = Math.floor(Math.random() * (+max - +min)) + +min;
+
+        if (random !== 1) {
+            $("h2#player1_roll").prepend(random + ", ");
+            scores_1.push(random);
+
+            var sum1 = _.reduce(scores_1, function (memo, num) {
+                return memo + num;
+            }, 0);
+            // alert(sum1);
+
             $("button#hold1").click(function () {
-                player1.Hold();
-                $("h2#player1_cum_score").text(player1.cummScore);
-                if (player1.cummScore === 100) {
+                cumulative_score_1 = sum1;
+                // alert(cumulative_score_1);
+                $("h2#player1_cum_score").text(cumulative_score_1);
+                if (cumulative_score_1 === 100) {
                     alert("Player 1 Wins")
                 }
 
@@ -73,4 +77,4 @@ $(document).ready(function () {});
 
     });
 
-
+});
