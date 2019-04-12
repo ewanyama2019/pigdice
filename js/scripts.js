@@ -42,12 +42,14 @@ $(document).ready(function () {
 
 
 
-// /*  Constructor for Player*/
-// function player(name, score) {
-//     this.nameOfPlayer = name;
-//     this.cummScore = score;
-//     this.diceRoll = [];
-// };
+/*  Constructor for Player*/
+function player(name, score) {
+    this.cummScore = 0;
+    this.diceRoll = [];
+    this.turn = turn;
+};
 
-// /*  Declared object player*/ 
-// var player1 = new player ("Player1" );
+/*  Declared object player*/ 
+var player1 = new player ();
+var player2 = new player ()
+
