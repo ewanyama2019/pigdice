@@ -33,7 +33,7 @@ Player.prototype.Hold = function () {
     this.roundScore = _.reduce(this.diceRoll, function (memo, num) {
         return memo + num;
     }, 0);
-    this.cummScore =+ this.roundScore;
+    this.cummScore = +this.roundScore;
     return this.cummScore;
 };
 
@@ -44,24 +44,26 @@ Player.prototype.Hold = function () {
 
 
 //------------------start of USER LOGIG--------------------------//
+
 $(document).ready(function () {
 
     //Initialize Final Score boards to Zero
     $("button#initialize").click(function () {
-            location.reload();
-        });
-
-    
+        location.reload();
+    });
 
     $("button#rollDice1").click(function () {
         player1.Roll();
 
-        if (_.contains(player1.diceRoll, 1 )) {
-            alert ("You're out" );
+        if (_.contains(player1.diceRoll, 1)) {
+            alert("You're out");
             player1.diceRoll = [];
-            $("h2#player1_roll").text(player1.diceRoll);
-        }
+            // $("h2#player1_roll").text(player1.diceRoll);
+        } 
+        else if ($("button#hold1").click(function () {}) && (_.contains(player1.diceRoll, 1))) {}
+                
         else {
+                  
             $("h2#player1_roll").text(player1.diceRoll + ", ");
             $("button#hold1").click(function () {
                 player1.Hold();
@@ -72,11 +74,15 @@ $(document).ready(function () {
 
             });
         };
-        // else ()
+        
 
 
 
 
     });
+
+    
+
+
 
 });
