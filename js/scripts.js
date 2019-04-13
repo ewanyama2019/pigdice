@@ -1,7 +1,7 @@
 ////---------start of BUSINESS LOGIC--------------------////
 
 //  Constructor for Player
-function Player() {
+ function Player() {
     this.cummScore = 0;
     this.roundScore = 0;
     this.diceRoll = [];
@@ -9,8 +9,8 @@ function Player() {
 };
 
 //  Declared object player
-var player1 = new Player();
-var player2 = new Player();
+const player1 = new Player();
+const player2 = new Player();
 
 //Finction to generate random numbers
 function randomizer() {
@@ -47,10 +47,18 @@ Player.prototype.Hold = function () {
 
 $(document).ready(function () {
 
-    //Initialize Final Score boards to Zero
+//Initialize Final Score boards to Zero
     $("button#initialize").click(function () {
         location.reload();
     });
+//Update player Visuals
+    document.getElementById('player1').innerText = 'Player1';
+    document.getElementById('player2').innerText = 'Player2';
+    document.getElementById('player1_cum_score').innerText = '0';
+    document.getElementById('player2_cum_score').innerText = '0';
+    document.getElementById('player1_roll').innerText = '0';
+    document.getElementById('player2_roll').innerText = '0';
+    document.querySelector('.dice').style.display = 'none';
 
     $("button#rollDice1").click(function () {
         player1.Roll();
@@ -110,3 +118,6 @@ $(document).ready(function () {
 
 
 });
+
+document.getElementById('player1').innerText = 'Player1';
+document.getElementById('player2').innerText = 'Player2';
