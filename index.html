@@ -65,11 +65,23 @@
             </div>
         </div>
         <div class="span-col-3 game-controls">
-            <button class="btn btn-danger" id="rollDice1" name="p1roll" >Roll</button>
-            <button class="btn btn-danger" id="hold1" name="p1hold">Hold</button>
-            <button class="btn btn-danger" id="initialize">New Game</button>
-            <button class="btn btn-danger" id="hold2" name="p2hold">Hold</button>
-            <button class="btn btn-danger" id="rollDice2" name="p2roll">Roll</button>
+            <div class="controls">
+                <div class=" player1-turn active">I
+                    <button class="btn btn-danger" id="rollDice1" name="p1roll">Roll</button>
+                    <button class="btn btn-danger" id="hold1" name="p1hold">Hold</button>
+                </div>
+                <div class="initialize"><button class="btn btn-danger" id="initialize">New Game</button></div>
+                <div class=player2-turn>
+                    <button class="btn btn-danger" id="hold2" name="p2hold" disabled>Hold</button>
+                    <button class="btn btn-danger" id="rollDice2" name="p2roll" disabled>Roll</button>
+                </div>
+            </div>
+
+            
+            
+            
+            
+            
 
 
         </div>

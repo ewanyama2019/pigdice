@@ -73,7 +73,7 @@ function init() {
     document.querySelector('.player1-banner').classList.remove('winner');
     // ducument.querySelector('.player2-banner').classList.remove('active');
     // document.querySelector('.player2-banner').classList.remove('winner');
-    // document.querySelector('.player1-banner').classList.add('active');
+    document.querySelector('.player1-banner').classList.add('active');
 
 };
     init();
@@ -81,8 +81,9 @@ function init() {
 document.querySelector('#rollDice1').addEventListener('click', function() {
     player1.Roll();
     if (!((_.contains(player1.diceRoll, 1)))) {
-        this.cummScore = this.roundScore;
+        this.cummScore =+ this.roundScore;
         document.getElementById('player1_roll').innerText = player1.diceRoll;
+        
         document.querySelector('.dice').style.display = 'block';
         document.querySelector('.dice').src = 'images/dice-results/dice-' + player1.lastIn() + '.png';
     }
@@ -90,9 +91,18 @@ document.querySelector('#rollDice1').addEventListener('click', function() {
         //Player toggle
         this.cummScore = 0;
         alert("You're out");
+        this.turn == 0 ? this.turn = 1: this.turn=0;
+        document.querySelector('.player1-banner').classList.remove('active');
+        document.querySelector('.player1-banner').classList.remove('winner');
+        ducument.querySelector('.player' + turn + '-banner').classList.add('active');
 
     }
 });
+
+//Hold 
+document.querySelector('#hold1').addEventListener('click', function (){});
+document.querySelector('#hold2').addEventListener('click', function (){});
+
 
 
 //     $("button#rollDice1").click(function () {
