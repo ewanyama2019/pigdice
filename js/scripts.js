@@ -9,31 +9,37 @@
 };
 
 //  Declared object player
-const player1 = new Player();
-const player2 = new Player();
+player1 = new Player();
+player2 = new Player();
 
 //Finction to generate random numbers
 function randomizer() {
     var min = 1;
     var max = 7;
     var random = Math.floor(Math.random() * (+max - +min)) + +min;
-    alert(random);
     return (random);
+    alert (random);
 };
 
 
 //declare roll prototype
 Player.prototype.Roll = function () {
     this.diceRoll.push(randomizer());
+    return this.diceRoll;
 };
 
-
-//declare hold prototype
-Player.prototype.Hold = function () {
+Player.prototype.roundoff = function () {
     this.roundScore = _.reduce(this.diceRoll, function (memo, num) {
         return memo + num;
     }, 0);
-    this.cummScore = +this.roundScore;
+};
+
+Player.prototype.lastIn =function () {
+    return this.diceRoll[this.diceRoll.length -1]
+};
+//declare hold prototype
+Player.prototype.Hold = function () {
+    this.cummScore =+ this.roundScore;
     return this.cummScore;
 };
 
@@ -65,16 +71,27 @@ function init() {
 //classes reset 
     document.querySelector('.player1-banner').classList.remove('active');
     document.querySelector('.player1-banner').classList.remove('winner');
-    ducument.querySelector('.player2-banner').classList.remove('active');
-    document.querySelector('.player2-banner').classList.remove('winner');
-    document.querySelector('.player1-banner').classList.add('active');
+    // ducument.querySelector('.player2-banner').classList.remove('active');
+    // document.querySelector('.player2-banner').classList.remove('winner');
+    // document.querySelector('.player1-banner').classList.add('active');
 
 };
     init();
 //Dice roll
 document.querySelector('#rollDice1').addEventListener('click', function() {
-    
     player1.Roll();
+    if (!((_.contains(player1.diceRoll, 1)))) {
+        this.cummScore = this.roundScore;
+        document.getElementById('player1_roll').innerText = player1.diceRoll;
+        document.querySelector('.dice').style.display = 'block';
+        document.querySelector('.dice').src = 'images/dice-results/dice-' + player1.lastIn() + '.png';
+    }
+    else {
+        //Player toggle
+        this.cummScore = 0;
+        alert("You're out");
+
+    }
 });
 
 
