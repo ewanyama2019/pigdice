@@ -92,12 +92,19 @@ h1.h1-footer{
 
 }
 button {
-    width: 15%;
-    border-style: groove;
+    width: 30%;
+    border: 3px;
+    border-style: ridge; 
     
 }
 .controls {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    margin: auto;
+
+}
+.active {
+    background-color: blue;
+    color: white
 }

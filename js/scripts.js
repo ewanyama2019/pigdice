@@ -71,30 +71,37 @@ function init() {
 //classes reset 
     document.querySelector('.player1-banner').classList.remove('active');
     document.querySelector('.player1-banner').classList.remove('winner');
-    // ducument.querySelector('.player2-banner').classList.remove('active');
-    // document.querySelector('.player2-banner').classList.remove('winner');
+    document.querySelector('.player2-banner').classList.remove('active');
+    document.querySelector('.player2-banner').classList.remove('winner');
     document.querySelector('.player1-banner').classList.add('active');
+    document.querySelector('.player1-turn').classList.add('active');
 
 };
     init();
 //Dice roll
-document.querySelector('#rollDice1').addEventListener('click', function() {
+document.querySelector('#rollDice1').addEventListener('click', function()  {
     player1.Roll();
     if (!((_.contains(player1.diceRoll, 1)))) {
         this.cummScore =+ this.roundScore;
         document.getElementById('player1_roll').innerText = player1.diceRoll;
-        
         document.querySelector('.dice').style.display = 'block';
         document.querySelector('.dice').src = 'images/dice-results/dice-' + player1.lastIn() + '.png';
     }
     else {
-        //Player toggle
+        //loose turn point
         this.cummScore = 0;
         alert("You're out");
         this.turn == 0 ? this.turn = 1: this.turn=0;
+
+        //switch turns
         document.querySelector('.player1-banner').classList.remove('active');
+        document.querySelector('.player1-turn').classList.remove('active');
         document.querySelector('.player1-banner').classList.remove('winner');
-        ducument.querySelector('.player' + turn + '-banner').classList.add('active');
+        ducument.querySelector('.player2-banner').classList.add("active");
+        document.querySelector('.player2-turn').classList.add("active");
+        document.getElementById('rollDice1').disabled = true;
+        // document.getElementById('rollDice2').disabled = false;
+        // document.getElementById('hold1').disabled = true;
 
     }
 });
